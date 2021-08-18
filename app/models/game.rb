@@ -1,5 +1,9 @@
 class Game < ApplicationRecord
-    
+    has_many :game_consoles
+    has_many :game_lists
+    has_many :consoles, through: :game_consoles
+    has_many :lists, through: :game_lists
+
 
     def self.games
         url = URI("https://api.rawg.io/api/games?key=9f9d2e7b7d54451099ba16f0a97cf395&metacritic=80")

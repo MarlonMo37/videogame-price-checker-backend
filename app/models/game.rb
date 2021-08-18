@@ -1,7 +1,7 @@
 class Game < ApplicationRecord
 
     def self.games
-        url = URI("https://api.rawg.io/api/platforms?key=9f9d2e7b7d54451099ba16f0a97cf395")
+        url = URI("https://api.rawg.io/api/games?key=9f9d2e7b7d54451099ba16f0a97cf395&metacritic=80")
 
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
